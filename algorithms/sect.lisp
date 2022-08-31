@@ -13,7 +13,7 @@
     (labels
         ((find-and-change (rest-argument index)
            (cond
-             ((null rest-argument) nil)
+             ((null rest-argument) (cons nil nil))
              ((equal '<...> (car rest-argument))
               (cons `(subseq ,best-name-for-arguments ,index) nil))
              ((equal '<> (car rest-argument))
