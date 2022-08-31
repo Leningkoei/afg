@@ -26,4 +26,4 @@
                (find-and-change (cdr rest-argument) index))))))
       (let ((arguments-kai (find-and-change arguments 0)))
         `(lambda (&rest ,best-name-for-arguments)
-           (apply #',function ,@arguments-kai))))))
+           (apply ,function ,@arguments-kai))))))
