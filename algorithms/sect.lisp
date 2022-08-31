@@ -14,6 +14,8 @@
         ((find-and-change (rest-argument index)
            (cond
              ((null rest-argument) nil)
+             ((equal '<...> (car rest-argument))
+              (cons `(subseq ,best-name-for-arguments ,index) nil))
              ((equal '<> (car rest-argument))
               (cons
                `(nth ,index ,best-name-for-arguments)
@@ -24,4 +26,4 @@
                (find-and-change (cdr rest-argument) index))))))
       (let ((arguments-kai (find-and-change arguments 0)))
         `(lambda (&rest ,best-name-for-arguments)
-           (,function ,@arguments-kai))))))
+           (apply #',function ,@arguments-kai))))))
