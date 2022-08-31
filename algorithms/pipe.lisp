@@ -1,7 +1,7 @@
 ;;;; 2-4
 ;;;; 2022/08/31
 
-(load #p"receive.lisp")
+(load #p"../algorithms/receive.lisp")
 
 (defun pipe (earlier later)
   (lambda (&rest arguments)
