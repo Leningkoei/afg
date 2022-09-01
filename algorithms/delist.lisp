@@ -3,3 +3,7 @@
 
 (defun delist (list)
   (apply #'values list))
+
+(defparameter delist
+  (lambda (list)
+    (apply #'values list)))
