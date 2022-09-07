@@ -40,7 +40,7 @@
 
 ;;; 4.
 
-(load #p"../algorithms/dispatcher.lisp")
+(load #p"../algorithms/dispatch.lisp")
 
 (defun harmonic-mean (a b)
   (let ((c (* 2 a b))
@@ -52,8 +52,8 @@
 
 (defun harmonic-mean (a b)
   (apply
-   (pipe (dispatcher (sect #'* 2 <> <>) (sect #'+ <> <>)) #'/)
+   (pipe (dispatch (sect #'* 2 <> <>) (sect #'+ <> <>)) #'/)
    (list a b)))
   ;; (receive (&rest arguments)
-  ;;     (apply (dispatcher (sect #'* 2 <> <>) (sect #'+ <> <>)) (list a b))
+  ;;     (apply (dispatch (sect #'* 2 <> <>) (sect #'+ <> <>)) (list a b))
   ;;   (apply #'/ arguments)))

@@ -4,6 +4,6 @@
 (load #p"../algorithms/delist.lisp")
 (load #p"../algorithms/sect.lisp")
 
-(defun dispatcher (&rest procedures)
+(defun dispatch (&rest procedures)
   #'(lambda (&rest arguments)
-      (delist (map 'list (sect apply <> arguments) procedures))))
+      (delist (map 'list (sect #'apply <> arguments) procedures))))

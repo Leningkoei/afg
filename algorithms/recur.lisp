@@ -12,4 +12,5 @@
                  (apply simplify guide nil)
                (receive (&rest recursive-results)
                    (recurrer next)
-                 (apply integerate current recursive-results))))))))
+                 (apply integerate current recursive-results))))))
+    #'recurrer))
